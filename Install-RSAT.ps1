@@ -12,4 +12,4 @@ Remove-ItemProperty -Path $registryPath -Name "WUStatusServer"
 Start-Service -Name wuauserv
 
 #Install RSAT feature
-Add-WindowsCapability -Online -Name Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0
+Get-WindowsCapability -Name RSAT* -Online | Add-WindowsCapability –Online
